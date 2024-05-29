@@ -26,8 +26,8 @@ public class aesDecryptJob extends Configured implements Tool{
 
         Configuration conf = getConf();
         // Here hadoop block size is determined, In hadoop 1 mapper is assigned to each block so by adjusting the size in(bytes)
-        conf.set("mapreduce.input.fileinputformat.split.minsize", "43690666");
-        conf.set("mapreduce.input.fileinputformat.split.maxsize", "43690666");
+        conf.set("mapreduce.input.fileinputformat.split.minsize", "1800");
+        conf.set("mapreduce.input.fileinputformat.split.maxsize", "1800");
 
         Job job = Job.getInstance(conf, "DecryptJob");
 //        job.setNumReduceTasks(10); // We can also set no of reducers, with increase in no of reducers  there is less chance to get a failure in merging process.
